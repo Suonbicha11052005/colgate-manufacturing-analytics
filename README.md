@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains a comprehensive analytics solution for **Colgate Manufacturing** focused on factory performance optimization. The project combines data analysis, business intelligence, and strategic insights to support decision-making in manufacturing operations.
+Kho lưu trữ này chứa một giải pháp phân tích toàn diện cho **Colgate Manufacturing** tập trung vào tối ưu hóa hiệu suất nhà máy. Dự án kết hợp phân tích dữ liệu, trí tuệ kinh doanh và trực quan hóa dữ liệu tương tác.
 
 **Team:** Sigma Seeker  
 **Competition:** RBAC 2025 - Round 2
@@ -13,58 +13,81 @@ This repository contains a comprehensive analytics solution for **Colgate Manufa
 
 ```
 colgate-manufacturing-analytics/
-├── README.md                                    # This file
-├── Data dictionary.xlsx                         # Complete data dictionary with field definitions
-├── RBAC 2025 - Factory Performance.pbix         # Power BI dashboard for factory performance
-├── [RBAC 2025] CASE STUDY ROUND 2.pdf          # Detailed case study and analysis
-├── [RBAC 2025] - Round 2 - Team Sigma Seeker.pdf # Team presentation and findings
-├── raw data/                                    # Original data files
-├── cleaned data/                                # Processed and cleaned datasets
-└── notebooks/                                   # Jupyter notebooks for analysis
+├── README.md                                    # File này
+├── Data dictionary.xlsx                         # Từ điển dữ liệu hoàn chỉnh với định nghĩa trường
+├── RBAC 2025 - Factory Performance.pbix         # Bảng điều khiển Power BI để phân tích hiệu suất nhà máy
+├── [RBAC 2025] CASE STUDY ROUND 2.pdf          # Báo cáo trường hợp chi tiết và phân tích
+├── [RBAC 2025] - Round 2 - Team Sigma Seeker.pdf # Bản trình bày nhóm và phát hiện
+│
+├── raw data/                                    # Dữ liệu gốc
+│   ├── production_data.csv                      # Dữ liệu sản xuất hàng ngày
+│   ├── equipment_logs.csv                       # Nhật ký hoạt động thiết bị
+│   ├── quality_control.csv                      # Dữ liệu kiểm soát chất lượng
+│   ├── factory_operations.csv                   # Dữ liệu hoạt động nhà máy
+│   └── defect_records.csv                       # Ghi chép lỗi sản phẩm
+│
+├── cleaned data/                                # Dữ liệu đã xử lý và làm sạch
+│   ├── production_cleaned.csv                   # Dữ liệu sản xuất đã làm sạch
+│   ├── equipment_cleaned.csv                    # Dữ liệu thiết bị đã xử lý
+│   ├── quality_cleaned.csv                      # Dữ liệu chất lượng đã xử lý
+│   ├── merged_dataset.csv                       # Tập dữ liệu hợp nhất tất cả nguồn
+│   └── quality_metrics.csv                      # Chỉ số chất lượng tính toán
+│
+└── notebooks/                                   # Sổ ghi chép Jupyter để phân tích
+    ├── 01_EDA.ipynb                             # Phân tích dữ liệu khám phá
+    ├── 02_Data_Cleaning.ipynb                   # Quy trình làm sạch dữ liệu
+    ├── 03_Statistical_Analysis.ipynb            # Phân tích thống kê và kiểm định giả thuyết
+    ├── 04_Performance_Metrics.ipynb              # Tính toán chỉ số hiệu suất
+    └── 05_Visualization.ipynb                   # Tạo các biểu đồ và trực quan hóa
 ```
 
 ---
 
 ## 🎯 Project Objectives
 
-- Analyze factory performance metrics across multiple dimensions
-- Identify operational bottlenecks and optimization opportunities
-- Develop data-driven recommendations for manufacturing efficiency
-- Create interactive visualizations for stakeholder decision-making
-- Support strategic planning based on empirical evidence
+Mục đích dự án bao gồm:
+- Phân tích các chỉ số hiệu suất nhà máy trên nhiều chiều khác nhau
+- Xác định các nút thắt hoạt động và cơ hội tối ưu hóa
+- Phát triển các khuyến nghị dựa trên dữ liệu để cải thiện hiệu quả sản xuất
+- Tạo các trực quan hóa tương tác cho việc ra quyết định của các bên liên quan
+- Hỗ trợ lập kế hoạch chiến lược dựa trên bằng chứng thực nghiệm
 
 ---
 
 ## 📊 Key Deliverables
 
 ### 1. **Data Dictionary** (`Data dictionary.xlsx`)
-Comprehensive documentation of all data fields, including:
-- Field names and descriptions
-- Data types and formats
-- Business definitions and context
-- Data quality indicators
+
+Tài liệu toàn diện cho tất cả các trường dữ liệu, bao gồm:
+- Tên trường và mô tả chi tiết
+- Loại dữ liệu và định dạng
+- Định nghĩa kinh doanh và bối cảnh
+- Chỉ số chất lượng dữ liệu
 
 ### 2. **Power BI Dashboard** (`RBAC 2025 - Factory Performance.pbix`)
-Interactive dashboard featuring:
-- Factory performance KPIs
-- Real-time production metrics
-- Comparative analysis across facilities
-- Role-Based Access Control (RBAC) implementation
-- Drill-down capabilities for detailed analysis
+
+Bảng điều khiển tương tác với các tính năng:
+- Các KPI hiệu suất nhà máy
+- Chỉ số sản xuất thời gian thực
+- Phân tích so sánh giữa các cơ sở
+- Triển khai Kiểm soát truy cập dựa trên vai trò (RBAC)
+- Khả năng khoan sâu để phân tích chi tiết
 
 ### 3. **Case Study Report** (`[RBAC 2025] CASE STUDY ROUND 2.pdf`)
-In-depth analysis covering:
-- Problem statement and research questions
-- Data methodology and approach
-- Key findings and insights
-- Strategic recommendations
+
+Phân tích sâu bao gồm:
+- Tuyên bố vấn đề và các câu hỏi nghiên cứu
+- Phương pháp dữ liệu và cách tiếp cận
+- Các phát hiện và insight chính
+- Các khuyến nghị chiến lược
 
 ### 4. **Team Presentation** (`[RBAC 2025] - Round 2 - Team Sigma Seeker.pdf`)
-Executive summary including:
-- Project overview and objectives
-- Major findings and conclusions
-- Implementation roadmap
-- Next steps and future opportunities
+
+Tóm tắt cấp quản lý bao gồm:
+- Tổng quan dự án và mục tiêu
+- Kết luận và phát hiện chính
+- Lộ trình triển khai
+- Các bước tiếp theo và cơ hội trong tương lai
 
 ---
 
@@ -72,130 +95,139 @@ Executive summary including:
 
 - **Data Processing:** Python (Jupyter Notebooks)
 - **Data Visualization:** Power BI
-- **Data Analysis:** Statistical analysis and exploratory data analysis
-- **Data Management:** Excel for data dictionaries and supplementary documentation
+- **Data Analysis:** Phân tích thống kê và phân tích dữ liệu khám phá
+- **Data Management:** Excel cho từ điển dữ liệu và tài liệu bổ sung
 
 ---
 
 ## 📈 Data Sources
 
 ### Raw Data (`raw data/`)
-Contains original datasets extracted from manufacturing operations:
-- Production metrics
-- Equipment performance logs
-- Quality control measurements
-- Factory operational data
+
+Chứa các tập dữ liệu gốc được trích xuất từ các hoạt động sản xuất:
+- **production_data.csv** - Chỉ số sản xuất, thời gian làm việc, sản lượng hàng ngày
+- **equipment_logs.csv** - Nhật ký hoạt động thiết bị, thời gian chạy, bảo trì định kỳ
+- **quality_control.csv** - Dữ liệu kiểm soát chất lượng, tỷ lệ lỗi, tiêu chuẩn
+- **factory_operations.csv** - Dữ liệu hoạt động nhà máy, ca làm việc, nhân sự
+- **defect_records.csv** - Ghi chép chi tiết lỗi sản phẩm, loại lỗi, nguyên nhân gốc rễ
 
 ### Cleaned Data (`cleaned data/`)
-Processed datasets ready for analysis:
-- Standardized formats
-- Missing value handling
-- Outlier treatment
-- Data validation and quality checks
+
+Các tập dữ liệu đã xử lý sẵn sàng cho phân tích:
+- **production_cleaned.csv** - Dữ liệu sản xuất đã được chuẩn hóa và xử lý giá trị thiếu
+- **equipment_cleaned.csv** - Dữ liệu thiết bị đã loại bỏ ngoại lệ và chuẩn hóa
+- **quality_cleaned.csv** - Dữ liệu chất lượng đã xử lý và xác thực
+- **merged_dataset.csv** - Tập dữ liệu hợp nhất từ tất cả các nguồn
+- **quality_metrics.csv** - Các chỉ số chất lượng được tính toán và dẫn xuất
 
 ---
 
 ## 🔍 Analysis Notebooks (`notebooks/`)
 
-Jupyter notebooks containing:
-- Exploratory Data Analysis (EDA)
-- Data preprocessing and cleaning pipelines
-- Statistical analysis and hypothesis testing
-- Visualization generation
-- Model development and validation
+Các sổ ghi chép Jupyter chứa:
+
+- **01_EDA.ipynb** - Phân tích dữ liệu khám phá, thống kê mô tả, trực quan hóa ban đầu
+- **02_Data_Cleaning.ipynb** - Quy trình làm sạch dữ liệu, xử lý giá trị thiếu, xử lý ngoại lệ
+- **03_Statistical_Analysis.ipynb** - Phân tích thống kê, kiểm định giả thuyết, tương quan
+- **04_Performance_Metrics.ipynb** - Tính toán chỉ số hiệu suất chính, KPI, so sánh năng lực
+- **05_Visualization.ipynb** - Tạo biểu đồ và trực quan hóa dữ liệu cho báo cáo
 
 ---
 
 ## 🎓 Key Insights
 
-The analysis addresses critical manufacturing challenges:
+Phân tích giải quyết các thách thức sản xuất quan trọng:
 
 1. **Performance Optimization**
-   - Identify high-performing and underperforming facilities
-   - Benchmark against industry standards
+   - Xác định các cơ sở hoạt động tốt và kém hiệu quả
+   - So sánh với tiêu chuẩn ngành
 
 2. **Operational Efficiency**
-   - Root cause analysis for production delays
-   - Resource allocation recommendations
+   - Phân tích nguyên nhân gốc rễ của trì hoãn sản xuất
+   - Khuyến nghị phân bổ tài nguyên
 
 3. **Quality Management**
-   - Quality trend analysis
-   - Defect rate monitoring
+   - Phân tích xu hướng chất lượng
+   - Giám sát tỷ lệ lỗi sản phẩm
 
 4. **Strategic Planning**
-   - Data-driven forecasting
-   - Investment prioritization
+   - Dự báo dựa trên dữ liệu
+   - Ưu tiên hóa đầu tư
 
 ---
 
 ## 💡 How to Use This Repository
 
-### For Stakeholders:
-1. Open the **Power BI Dashboard** (`RBAC 2025 - Factory Performance.pbix`) for interactive exploration
-2. Review the **Team Presentation** PDF for executive summary
-3. Consult the **Case Study Report** for detailed analysis
+### Cho Các Bên Liên Quan (Stakeholders):
+1. Mở **Power BI Dashboard** (`RBAC 2025 - Factory Performance.pbix`) để khám phá tương tác
+2. Xem lại **Team Presentation** PDF để có tóm tắt cấp quản lý
+3. Tham khảo **Case Study Report** để phân tích chi tiết
 
-### For Analysts/Data Scientists:
-1. Review the **Data Dictionary** for field definitions
-2. Explore **Jupyter Notebooks** in `/notebooks` for analysis methodology
-3. Examine **Cleaned Data** in `/cleaned data` for reproducible analysis
-4. Check **Raw Data** in `/raw data` for source information
+### Cho Nhà Phân Tích Dữ Liệu/Nhà Khoa Học Dữ Liệu:
+1. Xem lại **Data Dictionary** để hiểu định nghĩa trường
+2. Khám phá **Jupyter Notebooks** trong `/notebooks` để hiểu phương pháp phân tích
+3. Kiểm tra **Cleaned Data** trong `/cleaned data` để có dữ liệu có thể tái tạo
+4. Xem **Raw Data** trong `/raw data` để lấy thông tin nguồn
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.8+
+
+Yêu cầu để chạy dự án:
+- Python 3.8 trở lên
 - Jupyter Notebook
-- Power BI Desktop or Power BI Online
-- Required Python libraries (see individual notebook requirements)
+- Power BI Desktop hoặc Power BI Online
+- Các thư viện Python cần thiết (xem yêu cầu trong các sổ ghi chép riêng lẻ)
 
 ### Installation
 
+Hướng dẫn cài đặt:
+
 ```bash
-# Clone the repository
+# Sao chép kho lưu trữ
 git clone https://github.com/Suonbicha11052005/colgate-manufacturing-analytics.git
 
-# Navigate to project directory
+# Điều hướng đến thư mục dự án
 cd colgate-manufacturing-analytics
 
-# Install required packages (if applicable)
-pip install -r requirements.txt  # Create this file if needed
+# Cài đặt các gói cần thiết
+pip install -r requirements.txt
 ```
 
 ---
 
 ## 📝 Data Dictionary Reference
 
-For detailed information about data fields and definitions, refer to `Data dictionary.xlsx` which includes:
-- Field names and business descriptions
-- Data types and valid ranges
-- Calculation methods for derived metrics
-- Quality and completeness notes
+Để lấy thông tin chi tiết về các trường dữ liệu và định nghĩa, hãy tham khảo `Data dictionary.xlsx` bao gồm:
+- Tên trường và mô tả kinh doanh
+- Loại dữ liệu và phạm vi hợp lệ
+- Phương pháp tính toán cho các chỉ số dẫn xuất
+- Ghi chú về chất lượng và tính hoàn chỉnh
 
 ---
 
 ## 🤝 Contributing
 
-Team Members: **Sigma Seeker**
+Thành viên Nhóm: **Sigma Seeker**
 
-For contributions or questions:
-1. Open an issue for bug reports or feature requests
-2. Submit a pull request for improvements
-3. Update documentation for any changes
+Để đóng góp hoặc có câu hỏi:
+1. Mở một issue để báo cáo lỗi hoặc yêu cầu tính năng
+2. Gửi pull request để cải thiện
+3. Cập nhật tài liệu cho bất kỳ thay đổi nào
 
 ---
 
 ## 📋 License
 
-This project is part of the RBAC 2025 competition Round 2 submission. Proprietary and confidential.
+Dự án này là một phần của đề cử RBAC 2025 vòng 2. Bí mật và chỉ dành cho công nội bộ.
 
 ---
 
 ## 📞 Contact & Support
 
-For questions about this project, please contact the project team or open an issue in this repository.
+Nếu có câu hỏi về dự án này, vui lòng liên hệ với nhóm dự án hoặc mở một issue trong kho lưu trữ này.
 
 ---
 
