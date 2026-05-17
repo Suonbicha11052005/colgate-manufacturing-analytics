@@ -1,6 +1,6 @@
 # Colgate Manufacturing Analytics 📊
 
-This project focuses on analyzing operational inefficiencies in Colgate-Palmolive’s toothbrush manufacturing process, with an emphasis on machine downtime, production performance, and product quality control.
+This project focuses on analyzing operational inefficiencies in Colgate-Palmolive's toothbrush manufacturing process, with an emphasis on machine downtime, production performance, and product quality.
 
 Nhà máy sản xuất đang gặp các vấn đề như:
 - Downtime xảy ra thường xuyên
@@ -27,7 +27,7 @@ Phân tích bao gồm:
 
 ---
 
-# 📁 Project Structure
+# Project Structure 📁
 
 ```text
 colgate-manufacturing-analytics/
@@ -55,7 +55,7 @@ colgate-manufacturing-analytics/
 
 ---
 
-# 📊 Key Metrics
+# Key Metrics 📊
 
 ## Overall Equipment Effectiveness (OEE)
 
@@ -116,7 +116,7 @@ Các metrics này được dùng để đánh giá:
 
 ---
 
-# 🔍 Key Findings
+# Key Findings 🔍
 
 ## Factory Performance Below Industry Benchmark
 
@@ -162,7 +162,7 @@ Các product có defect rate cao:
 
 ---
 
-# 🛠️ Technical Stack
+# Technical Stack 🛠️
 
 ## Programming & Analytics
 
@@ -192,7 +192,7 @@ Các product có defect rate cao:
 
 ---
 
-# 📈 Data Sources
+# Data Sources 📈
 
 ## production_logs.csv
 
@@ -224,7 +224,7 @@ Bảng mapping giữa:
 
 ---
 
-# 🧠 Analytical Workflow
+# Analytical Workflow 🧠
 
 ## 1. Data Cleaning
 
@@ -280,7 +280,7 @@ Xác định:
 
 ---
 
-# 📊 Dashboard
+# Dashboard 📊
 
 Project bao gồm Power BI dashboard:
 
@@ -298,7 +298,7 @@ Dashboard hỗ trợ:
 
 ---
 
-# 🚀 How to Run
+# How to Run 🚀
 
 ## Clone Repository
 
@@ -328,7 +328,7 @@ bằng Power BI Desktop.
 
 ---
 
-# 📌 Repository Contents
+# Repository Contents 📌
 
 | File | Description |
 |---|---|
@@ -341,7 +341,7 @@ bằng Power BI Desktop.
 
 ---
 
-# 📄 Disclaimer
+# Disclaimer 📄
 
 Dự án được thực hiện cho mục đích học thuật và phân tích dữ liệu.
 
