@@ -270,13 +270,16 @@ Xác định:
 
 ---
 
-## 5. Recommendation Development
+## 5. Data-Driven Recommendations
 
-Đề xuất các giải pháp:
-- Preventive & predictive maintenance
-- In-process quality control
-- SMED optimization
-- Shift handover standardization
+**Strategy 1 – Predictive Maintenance**
+Tập trung công tác bảo trì vào các thiết bị có tình trạng ngừng hoạt động lặp lại nhiều lần dựa trên dữ liệu sự cố lịch sử nhằm giảm thiểu các sự cố dừng máy ngoài kế hoạch.
+
+**Strategy 2 – Quality Control Optimization**
+Tăng cường kiểm tra chất lượng đối với các loại sản phẩm có tỷ lệ lỗi cao và chuẩn hóa các quy trình tốt nhất từ các dây chuyền sản xuất đạt hiệu suất cao.
+
+**Strategy 3 – Operational and Shift Optimization**
+Nâng cao chất lượng đào tạo công nhân vận hành và tối ưu hóa phân bổ nhân sự cho các ca làm việc có tần suất dừng máy và tỷ lệ lỗi cao.
 
 ---
 
