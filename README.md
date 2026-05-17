@@ -1,244 +1,348 @@
 # Colgate Manufacturing Analytics 📊
 
-## Overview
+This project focuses on analyzing operational inefficiencies in Colgate-Palmolive’s toothbrush manufacturing process, with an emphasis on machine downtime, production performance, and product quality control.
 
-Kho lưu trữ này chứa một giải pháp phân tích toàn diện cho **Colgate Manufacturing** tập trung vào tối ưu hóa hiệu suất nhà máy. Dự án kết hợp phân tích dữ liệu, trí tuệ kinh doanh và trực quan hóa dữ liệu tương tác.
+Nhà máy sản xuất đang gặp các vấn đề như:
+- Downtime xảy ra thường xuyên
+- Tỷ lệ rework và defect cao
+- Hiệu suất vận hành chưa ổn định
+- Thiết bị có độ tin cậy thấp
+- Changeover và shift transition gây mất thời gian sản xuất
 
-**Team:** Sigma Seeker  
-**Competition:** RBAC 2025 - Round 2
+Các vấn đề này làm giảm Overall Equipment Effectiveness (OEE), ảnh hưởng đến throughput và làm tăng chi phí vận hành.
+
+Dự án sử dụng dữ liệu sản xuất, maintenance logs và dữ liệu vận hành để:
+- Đánh giá hiệu suất hoạt động của nhà máy
+- Xác định nguyên nhân gốc rễ gây downtime và defect
+- Đo lường mức độ tổn thất sản xuất
+- Tìm ra các machine, line và shift có rủi ro cao
+- Đề xuất các chiến lược tối ưu hóa hiệu suất vận hành
+
+Phân tích bao gồm:
+- Exploratory Data Analysis (EDA)
+- Root Cause Analysis
+- Manufacturing KPI Analysis
+- Time Series Analysis (VAR & FEVD)
+- Interactive Power BI Dashboarding
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
-```
+```text
 colgate-manufacturing-analytics/
-├── README.md                                    # File này
-├── Data dictionary.xlsx                         # Từ điển dữ liệu hoàn chỉnh với định nghĩa trường
-├── RBAC 2025 - Factory Performance.pbix         # Bảng điều khiển Power BI để phân tích hiệu suất nhà máy
-├── [RBAC 2025] CASE STUDY ROUND 2.pdf          # Báo cáo trường hợp chi tiết và phân tích
-├── [RBAC 2025] - Round 2 - Team Sigma Seeker.pdf # Bản trình bày nhóm và phát hiện
 │
-├── raw data/                                    # Dữ liệu gốc
-│   ├── production_data.csv                      # Dữ liệu sản xuất hàng ngày
-│   ├── equipment_logs.csv                       # Nhật ký hoạt động thiết bị
-│   ├── quality_control.csv                      # Dữ liệu kiểm soát chất lượng
-│   ├── factory_operations.csv                   # Dữ liệu hoạt động nhà máy
-│   └── defect_records.csv                       # Ghi chép lỗi sản phẩm
+├── README.md
+├── .gitignore
 │
-├── cleaned data/                                # Dữ liệu đã xử lý và làm sạch
-│   ├── production_cleaned.csv                   # Dữ liệu sản xuất đã làm sạch
-│   ├── equipment_cleaned.csv                    # Dữ liệu thiết bị đã xử lý
-│   ├── quality_cleaned.csv                      # Dữ liệu chất lượng đã xử lý
-│   ├── merged_dataset.csv                       # Tập dữ liệu hợp nhất tất cả nguồn
-│   └── quality_metrics.csv                      # Chỉ số chất lượng tính toán
+├── cleaned data/
+│   └── final_df_cleaned.csv
 │
-└── notebooks/                                   # Sổ ghi chép Jupyter để phân tích
-    ├── 01_EDA.ipynb                             # Phân tích dữ liệu khám phá
-    ├── 02_Data_Cleaning.ipynb                   # Quy trình làm sạch dữ liệu
-    ├── 03_Statistical_Analysis.ipynb            # Phân tích thống kê và kiểm định giả thuyết
-    ├── 04_Performance_Metrics.ipynb              # Tính toán chỉ số hiệu suất
-    └── 05_Visualization.ipynb                   # Tạo các biểu đồ và trực quan hóa
+├── notebooks/
+│   ├── RBAC_Coding_File_Question_1_+_Question_2_+_Question_3.ipynb
+│   └── RBAC_FINAL_CODE_CLEANED.ipynb
+│
+├── raw data/
+│   ├── cross_reference.csv
+│   ├── maintenance_order.csv
+│   └── production_logs.csv
+│
+├── [RBAC 2025] - Round 2 - Team Sigma Seeker.pdf
+├── [RBAC 2025] CASE STUDY ROUND 2.pdf
+├── Data dictionary.xlsx
+└── RBAC 2025 - Factory Performance.pbix
 ```
 
 ---
 
-## 🎯 Project Objectives
+# 📊 Key Metrics
 
-Mục đích dự án bao gồm:
-- Phân tích các chỉ số hiệu suất nhà máy trên nhiều chiều khác nhau
-- Xác định các nút thắt hoạt động và cơ hội tối ưu hóa
-- Phát triển các khuyến nghị dựa trên dữ liệu để cải thiện hiệu quả sản xuất
-- Tạo các trực quan hóa tương tác cho việc ra quyết định của các bên liên quan
-- Hỗ trợ lập kế hoạch chiến lược dựa trên bằng chứng thực nghiệm
+## Overall Equipment Effectiveness (OEE)
 
----
+Đo lường hiệu quả vận hành tổng thể của hệ thống sản xuất thông qua:
+- Availability
+- Performance
+- Quality
 
-## 📊 Key Deliverables
-
-### 1. **Data Dictionary** (`Data dictionary.xlsx`)
-
-Tài liệu toàn diện cho tất cả các trường dữ liệu, bao gồm:
-- Tên trường và mô tả chi tiết
-- Loại dữ liệu và định dạng
-- Định nghĩa kinh doanh và bối cảnh
-- Chỉ số chất lượng dữ liệu
-
-### 2. **Power BI Dashboard** (`RBAC 2025 - Factory Performance.pbix`)
-
-Bảng điều khiển tương tác với các tính năng:
-- Các KPI hiệu suất nhà máy
-- Chỉ số sản xuất thời gian thực
-- Phân tích so sánh giữa các cơ sở
-- Triển khai Kiểm soát truy cập dựa trên vai trò (RBAC)
-- Khả năng khoan sâu để phân tích chi tiết
-
-### 3. **Case Study Report** (`[RBAC 2025] CASE STUDY ROUND 2.pdf`)
-
-Phân tích sâu bao gồm:
-- Tuyên bố vấn đề và các câu hỏi nghiên cứu
-- Phương pháp dữ liệu và cách tiếp cận
-- Các phát hiện và insight chính
-- Các khuyến nghị chiến lược
-
-### 4. **Team Presentation** (`[RBAC 2025] - Round 2 - Team Sigma Seeker.pdf`)
-
-Tóm tắt cấp quản lý bao gồm:
-- Tổng quan dự án và mục tiêu
-- Kết luận và phát hiện chính
-- Lộ trình triển khai
-- Các bước tiếp theo và cơ hội trong tương lai
+OEE được sử dụng để đánh giá mức độ hiệu quả của dây chuyền sản xuất và xác định các nguồn gây tổn thất.
 
 ---
 
-## 🛠️ Technical Stack
+## Downtime Rate
 
-- **Data Processing:** Python (Jupyter Notebooks)
-- **Data Visualization:** Power BI
-- **Data Analysis:** Phân tích thống kê và phân tích dữ liệu khám phá
-- **Data Management:** Excel cho từ điển dữ liệu và tài liệu bổ sung
+Đo lường tỷ lệ thời gian máy không hoạt động trong thời gian sản xuất.
 
----
-
-## 📈 Data Sources
-
-### Raw Data (`raw data/`)
-
-Chứa các tập dữ liệu gốc được trích xuất từ các hoạt động sản xuất:
-- **production_data.csv** - Chỉ số sản xuất, thời gian làm việc, sản lượng hàng ngày
-- **equipment_logs.csv** - Nhật ký hoạt động thiết bị, thời gian chạy, bảo trì định kỳ
-- **quality_control.csv** - Dữ liệu kiểm soát chất lượng, tỷ lệ lỗi, tiêu chuẩn
-- **factory_operations.csv** - Dữ liệu hoạt động nhà máy, ca làm việc, nhân sự
-- **defect_records.csv** - Ghi chép chi tiết lỗi sản phẩm, loại lỗi, nguyên nhân gốc rễ
-
-### Cleaned Data (`cleaned data/`)
-
-Các tập dữ liệu đã xử lý sẵn sàng cho phân tích:
-- **production_cleaned.csv** - Dữ liệu sản xuất đã được chuẩn hóa và xử lý giá trị thiếu
-- **equipment_cleaned.csv** - Dữ liệu thiết bị đã loại bỏ ngoại lệ và chuẩn hóa
-- **quality_cleaned.csv** - Dữ liệu chất lượng đã xử lý và xác thực
-- **merged_dataset.csv** - Tập dữ liệu hợp nhất từ tất cả các nguồn
-- **quality_metrics.csv** - Các chỉ số chất lượng được tính toán và dẫn xuất
+Downtime được phân tích theo:
+- Production line
+- Shift
+- Product type
+- Downtime reason
+- Machine category
 
 ---
 
-## 🔍 Analysis Notebooks (`notebooks/`)
+## Defect Rate
 
-Các sổ ghi chép Jupyter chứa:
+Đo lường tỷ lệ sản phẩm lỗi trong quá trình sản xuất.
 
-- **01_EDA.ipynb** - Phân tích dữ liệu khám phá, thống kê mô tả, trực quan hóa ban đầu
-- **02_Data_Cleaning.ipynb** - Quy trình làm sạch dữ liệu, xử lý giá trị thiếu, xử lý ngoại lệ
-- **03_Statistical_Analysis.ipynb** - Phân tích thống kê, kiểm định giả thuyết, tương quan
-- **04_Performance_Metrics.ipynb** - Tính toán chỉ số hiệu suất chính, KPI, so sánh năng lực
-- **05_Visualization.ipynb** - Tạo biểu đồ và trực quan hóa dữ liệu cho báo cáo
-
----
-
-## 🎓 Key Insights
-
-Phân tích giải quyết các thách thức sản xuất quan trọng:
-
-1. **Performance Optimization**
-   - Xác định các cơ sở hoạt động tốt và kém hiệu quả
-   - So sánh với tiêu chuẩn ngành
-
-2. **Operational Efficiency**
-   - Phân tích nguyên nhân gốc rễ của trì hoãn sản xuất
-   - Khuyến nghị phân bổ tài nguyên
-
-3. **Quality Management**
-   - Phân tích xu hướng chất lượng
-   - Giám sát tỷ lệ lỗi sản phẩm
-
-4. **Strategic Planning**
-   - Dự báo dựa trên dữ liệu
-   - Ưu tiên hóa đầu tư
+Phân tích defect giúp:
+- Xác định sản phẩm có tỷ lệ lỗi cao
+- Tìm machine gây lỗi nhiều nhất
+- Đánh giá sự ổn định của quy trình sản xuất
 
 ---
 
-## 💡 How to Use This Repository
+## Production Throughput Yield
 
-### Cho Các Bên Liên Quan (Stakeholders):
-1. Mở **Power BI Dashboard** (`RBAC 2025 - Factory Performance.pbix`) để khám phá tương tác
-2. Xem lại **Team Presentation** PDF để có tóm tắt cấp quản lý
-3. Tham khảo **Case Study Report** để phân tích chi tiết
+Đo lường tỷ lệ sản phẩm đạt chất lượng đầu ra mà không cần rework.
 
-### Cho Nhà Phân Tích Dữ Liệu/Nhà Khoa Học Dữ Liệu:
-1. Xem lại **Data Dictionary** để hiểu định nghĩa trường
-2. Khám phá **Jupyter Notebooks** trong `/notebooks` để hiểu phương pháp phân tích
-3. Kiểm tra **Cleaned Data** trong `/cleaned data` để có dữ liệu có thể tái tạo
-4. Xem **Raw Data** trong `/raw data` để lấy thông tin nguồn
+Chỉ số này phản ánh:
+- Hiệu quả vận hành
+- Chất lượng quy trình
+- Khả năng duy trì output ổn định
 
 ---
 
-## 🚀 Getting Started
+## Reliability Metrics
 
-### Prerequisites
+Bao gồm:
+- MTBF (Mean Time Between Failures)
+- MTTR (Mean Time To Repair)
 
-Yêu cầu để chạy dự án:
-- Python 3.8 trở lên
+Các metrics này được dùng để đánh giá:
+- Độ ổn định của thiết bị
+- Tốc độ xử lý sự cố
+- Hiệu quả maintenance
+
+---
+
+# 🔍 Key Findings
+
+## Factory Performance Below Industry Benchmark
+
+Factory có mức OEE trung bình khoảng 50%, thấp hơn benchmark FMCG industry (~60–70%).
+
+Nguyên nhân chính:
+- Frequent downtime
+- Low performance efficiency
+- Rework-related interruptions
+- Unstable equipment reliability
+
+---
+
+## Reactive Maintenance Culture
+
+Factory hiện đang hoạt động theo hướng reactive maintenance thay vì preventive maintenance.
+
+Biểu hiện:
+- Unplanned downtime chiếm tỷ trọng lớn
+- Rework là nguyên nhân downtime hàng đầu
+- Downtime spikes xuất hiện nhiều ở Night shift
+
+Điều này làm:
+- Giảm tính ổn định của hệ thống
+- Tăng production variability
+- Làm OEE dao động mạnh
+
+---
+
+## High-Risk Machines and Production Lines
+
+Một số production line có downtime rất cao:
+- MKZA1501
+- MKZA1502
+
+Một số machine series có defect rate cao:
+- MAFT220x
+
+Các product có defect rate cao:
+- Renew 360
+- Junior Guard Taper
+- Oral Care 360
+
+---
+
+# 🛠️ Technical Stack
+
+## Programming & Analytics
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Statsmodels
+
+---
+
+## Visualization & BI
+
+- Power BI
 - Jupyter Notebook
-- Power BI Desktop hoặc Power BI Online
-- Các thư viện Python cần thiết (xem yêu cầu trong các sổ ghi chép riêng lẻ)
 
-### Installation
+---
 
-Hướng dẫn cài đặt:
+## Analytical Techniques
+
+- Exploratory Data Analysis
+- Root Cause Analysis
+- Time Series Modeling
+- VAR & FEVD Analysis
+- KPI Analysis
+
+---
+
+# 📈 Data Sources
+
+## production_logs.csv
+
+Chứa dữ liệu vận hành sản xuất:
+- Runtime
+- Downtime
+- Production quantity
+- Reject quantity
+- Shift information
+- Production line information
+
+---
+
+## maintenance_order.csv
+
+Chứa dữ liệu maintenance:
+- Equipment ID
+- Maintenance order
+- Maintenance type
+- Maintenance schedule
+
+---
+
+## cross_reference.csv
+
+Bảng mapping giữa:
+- Equipment ID
+- Production line
+
+---
+
+# 🧠 Analytical Workflow
+
+## 1. Data Cleaning
+
+Thực hiện:
+- Remove duplicates
+- Handle missing values
+- Convert datetime formats
+- Standardize categorical values
+
+Sau đó merge các bảng dữ liệu để tạo consolidated dataset phục vụ phân tích.
+
+---
+
+## 2. Exploratory Data Analysis
+
+Phân tích:
+- OEE trend
+- Downtime trend
+- Defect trend
+- Shift performance
+- Product performance
+- Machine efficiency
+
+---
+
+## 3. Root Cause Analysis
+
+Xác định:
+- Systemic issues
+- Emerging issues
+- Main downtime drivers
+- Main defect drivers
+
+---
+
+## 4. Impact Quantification
+
+Đo lường:
+- Potential production unit loss
+- Material waste
+- Throughput loss
+- Operational inefficiency
+
+---
+
+## 5. Recommendation Development
+
+Đề xuất các giải pháp:
+- Preventive & predictive maintenance
+- In-process quality control
+- SMED optimization
+- Shift handover standardization
+
+---
+
+# 📊 Dashboard
+
+Project bao gồm Power BI dashboard:
+
+```text
+RBAC 2025 - Factory Performance.pbix
+```
+
+Dashboard hỗ trợ:
+- OEE monitoring
+- Downtime analysis
+- Defect analysis
+- Throughput tracking
+- Shift comparison
+- Production line comparison
+
+---
+
+# 🚀 How to Run
+
+## Clone Repository
 
 ```bash
-# Sao chép kho lưu trữ
-git clone https://github.com/Suonbicha11052005/colgate-manufacturing-analytics.git
-
-# Điều hướng đến thư mục dự án
-cd colgate-manufacturing-analytics
-
-# Cài đặt các gói cần thiết
-pip install -r requirements.txt
+git clone https://github.com/YOUR_USERNAME/colgate-manufacturing-analytics.git
 ```
 
 ---
 
-## 📝 Data Dictionary Reference
+## Open Jupyter Notebook
 
-Để lấy thông tin chi tiết về các trường dữ liệu và định nghĩa, hãy tham khảo `Data dictionary.xlsx` bao gồm:
-- Tên trường và mô tả kinh doanh
-- Loại dữ liệu và phạm vi hợp lệ
-- Phương pháp tính toán cho các chỉ số dẫn xuất
-- Ghi chú về chất lượng và tính hoàn chỉnh
+```bash
+jupyter notebook
+```
 
 ---
 
-## 🤝 Contributing
+## Open Power BI Dashboard
 
-Thành viên Nhóm: **Sigma Seeker**
+Mở file:
 
-Để đóng góp hoặc có câu hỏi:
-1. Mở một issue để báo cáo lỗi hoặc yêu cầu tính năng
-2. Gửi pull request để cải thiện
-3. Cập nhật tài liệu cho bất kỳ thay đổi nào
+```text
+RBAC 2025 - Factory Performance.pbix
+```
 
----
-
-## 📋 License
-
-Dự án này là một phần của đề cử RBAC 2025 vòng 2. Bí mật và chỉ dành cho công nội bộ.
+bằng Power BI Desktop.
 
 ---
 
-## 📞 Contact & Support
+# 📌 Repository Contents
 
-Nếu có câu hỏi về dự án này, vui lòng liên hệ với nhóm dự án hoặc mở một issue trong kho lưu trữ này.
-
----
-
-## 🔗 References
-
-- **Case Study:** [RBAC 2025] CASE STUDY ROUND 2.pdf
-- **Presentation:** [RBAC 2025] - Round 2 - Team Sigma Seeker.pdf
-- **Dashboard:** RBAC 2025 - Factory Performance.pbix
-- **Data Dictionary:** Data dictionary.xlsx
+| File | Description |
+|---|---|
+| `RBAC_FINAL_CODE_CLEANED.ipynb` | Notebook phân tích chính |
+| `final_df_cleaned.csv` | Dataset sau khi làm sạch |
+| `RBAC 2025 - Factory Performance.pbix` | Interactive dashboard |
+| `Data dictionary.xlsx` | Data dictionary |
+| `Team Sigma Seeker.pdf` | Final presentation |
+| `CASE STUDY ROUND 2.pdf` | Đề bài case study |
 
 ---
 
-**Last Updated:** May 2026  
-**Project Status:** Active
+# 📄 Disclaimer
+
+Dự án được thực hiện cho mục đích học thuật và phân tích dữ liệu.
+
+Tất cả dữ liệu trong project là dữ liệu giả lập và không đại diện cho dữ liệu thực tế của Colgate-Palmolive.
