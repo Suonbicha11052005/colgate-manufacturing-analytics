@@ -1,6 +1,6 @@
 # Colgate Manufacturing Analytics 📊
 
-This project focuses on analyzing operational inefficiencies in Colgate-Palmolive's toothbrush manufacturing process, with an emphasis on machine downtime, production performance, and product quality.
+Dự án này tập trung vào việc phân tích các điểm **kém hiệu quả trong vận hành** tại quy trình sản xuất **bàn chải đánh răng của Colgate-Palmolive**, với trọng tâm là **thời gian máy ngừng hoạt động, hiệu suất sản xuất và chất lượng sản phẩm.**
 
 Nhà máy sản xuất đang gặp các vấn đề như:
 - Downtime xảy ra thường xuyên
@@ -332,17 +332,11 @@ bằng Power BI Desktop.
 
 | File | Description |
 |---|---|
-| `RBAC_FINAL_CODE_CLEANED.ipynb` | Notebook phân tích chính |
+| `RBAC_Coding_File_Question_1_+_Question_2_+_Question_3_.ipynb` | Notebook phân tích chính |
 | `final_df_cleaned.csv` | Dataset sau khi làm sạch |
 | `RBAC 2025 - Factory Performance.pbix` | Interactive dashboard |
 | `Data dictionary.xlsx` | Data dictionary |
 | `Team Sigma Seeker.pdf` | Final presentation |
 | `CASE STUDY ROUND 2.pdf` | Đề bài case study |
 
----
 
-# Disclaimer 📄
-
-Dự án được thực hiện cho mục đích học thuật và phân tích dữ liệu.
-
-Tất cả dữ liệu trong project là dữ liệu giả lập và không đại diện cho dữ liệu thực tế của Colgate-Palmolive.
